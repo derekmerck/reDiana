@@ -19,7 +19,7 @@ $ docker-compose up
 When using Resin.io devices in "local mode" for development and testing, you can also [direct the device's Docker daemon remotely][dev-test].
 
 ```bash
-$ DOCKER_API_VERSION=1.22 DOCKER_HOST=tcp://device_name.local:2375 docker-compose up -d
+$ DOCKER_API_VERSION=1.22 DOCKER_HOST=tcp://device_ipl:2375 docker-compose up -d
 ```
 
 [dev-test]: https://github.com/resin-io-playground/resinos-compose
@@ -39,12 +39,12 @@ Depending on configuration.
 Supported Architectures
 -----------------------
 
-Tested on an Intel-based machine and Raspberry Pi.  Can be compiled for `aarch64`, but not tested.
+Tested on `amd64` VM and `arm32v7` [Raspberry Pi][].  Can be compiled for `aarch64`, but not tested.
 
 Dependencies are are all multi-architecture, so the image name alone is typically sufficient to find the correct image when pushing to a range of devices.  When uploading via [Resin.io][], you may need to add explicit "arm32v7" tags for the Raspberry Pi because their builder is `aarch64` and will look for an "arm64v8" tag by preference rather than the base image target arch.
 
-[Resin.io]: http://resin.io
-
+[Resin.io]: https://resin.io
+[Raspberry Pi]: https://www.raspberrypi.org
 
 License
 -------
