@@ -6,7 +6,7 @@ Derek Merck
 Rhode Island Hospital and Brown University  
 Providence, RI  
 
-Setup a multi-arch [Diana](https://github.com/derekmerck/diana) DICOM-handler service on embedded systems.
+Setup a multi-arch [DIANA](https://github.com/derekmerck/diana) DICOM-handler service on embedded systems.
 
 
 Use It
@@ -29,19 +29,22 @@ Docker Image Dependencies
 -------------------------
 
 - [redis](https://hub.docker.com/_/redis/)
-- [derekmerck/orthanc](https://github.com/derekmerck/orthanc-xarch)
+- [derekmerck/orthanc](https://github.com/derekmerck/orthanc-xarch) --  Suggested to use pre-threading Orthanc-1.3.2 tag until [orthanc19][] is addressed
 - [derekmerck/conda](https://github.com/derekmerck/conda-xarch)
 - [derekmerck/keras-tf](https://github.com/derekmerck/conda-xarch)
 
-Depending on configuration.
+Keras-TF is used instead of Conda for machine learning configurations.
+
+[orthanc19]: https://bitbucket.org/sjodogne/orthanc/issues/97/intermittent-peer-to-peer-send-failures-w
+
 
 
 Supported Architectures
 -----------------------
 
-Tested on `amd64` VM and `arm32v7` [Raspberry Pi][].  Can be compiled for `aarch64`, but not tested.
+Tested on `amd64` virtual machines and `arm32v7` [Raspberry Pi][].  Can be compiled for `aarch64`, but currently untested.
 
-Dependencies are are all multi-architecture, so the image name alone is typically sufficient to find the correct image when pushing to a range of devices.  When uploading via [Resin.io][], you may need to add explicit "arm32v7" tags for the Raspberry Pi because their builder is `aarch64` and will look for an "arm64v8" tag by preference rather than the base image target arch.
+Dependencies are are all multi-architecture, so the image name alone is typically sufficient to find the correct image when pushing to a range of devices.  When uploading via [Resin.io][], you may need to add explicit "arm32v7" tags for the Raspberry Pi because their builder is `aarch64` and will look for an "arm64v8" tag by preference, rather than the base image target architecture, as it should.
 
 [Resin.io]: https://resin.io
 [Raspberry Pi]: https://www.raspberrypi.org
