@@ -15,7 +15,7 @@ services:
 #      TZ: America/New_York
 
   dicom:
-    image: derekmerck/orthanc:or321-arm32v7
+    image: derekmerck/orthanc:or132-arm32v7
     ports:
       - "4242:4242"
       - "8042:8042"
@@ -24,7 +24,7 @@ services:
       # If using Resin, turn on the init system, otherwise don't, it's breaking
       INITSYSTEM: "on"
 
-  keras-tf:
+  diana-learn:
     image: derekmerck/diana-learn:arm32v7
     links:
 #      - broker
