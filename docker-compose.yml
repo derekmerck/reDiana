@@ -25,7 +25,7 @@ services:
       INITSYSTEM: "on"
 
   keras-tf:
-    image: derekmerck/diana-learn-arm32v7
+    image: derekmerck/diana-learn:arm32v7
     links:
 #      - broker
       - dicom
