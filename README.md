@@ -44,7 +44,7 @@ Supported Architectures
 
 Tested on `amd64` virtual machines and `arm32v7` [Raspberry Pi][].  Can be compiled for `aarch64`, but currently untested.
 
-Dependencies are are all multi-architecture, so the image name alone is typically sufficient to find the correct image when pushing to a range of devices.  When uploading via [Resin.io][], you may need to add explicit "arm32v7" tags for the Raspberry Pi because their builder is `aarch64` and will look for an "arm64v8" tag by preference, rather than the base image target architecture, as it should.
+Dependencies are are all multi-architecture, so the image name alone is typically sufficient to find the correct image when pushing to a range of devices.  When uploading via [Resin.io][] for Raspberry Pi, though, you need to add explicit "arm32v7" tags.  Their builder is `aarch64` and will look for an "arm64v8" tag by preference, rather than the base image target architecture, as it should.
 
 [Resin.io]: https://resin.io
 [Raspberry Pi]: https://www.raspberrypi.org
